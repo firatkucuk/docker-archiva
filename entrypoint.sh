@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ ! -d "/archiva-data/conf" ]; then
+if [ ! -d "/archiva-data/conf" || ! -d  "/archiva-data/repositories" || ! -d "/archiva-data/data" || ! -d "/archiva-data/logs" ]; then
     mkdir /archiva-data/conf
     mkdir /archiva-data/repositories
     mkdir /archiva-data/data
