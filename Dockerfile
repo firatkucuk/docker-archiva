@@ -8,8 +8,11 @@ RUN wget http://apache.40b.nl/archiva/${ARCHIVA_VERSION}/binaries/apache-archiva
   && mv apache-archiva-${ARCHIVA_VERSION} archiva \
   && mkdir -p /archiva-data \
   && mv /archiva/conf /archiva/conf.backup \
+  && rm -rf /archiva/logs \
   && ln -s /archiva-data/conf /archiva/conf \
   && ln -s /archiva-data/repositories /archiva/repositories \
+  && ln -s /archiva-data/data /archiva/data \
+  && ln -s /archiva-data/logs /archiva/logs \
   && apk add --update -t deps libc6-compat \
   && rm /var/cache/apk/*
  
