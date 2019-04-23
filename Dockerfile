@@ -11,6 +11,7 @@ RUN wget http://apache.40b.nl/archiva/${ARCHIVA_VERSION}/binaries/apache-archiva
  
 EXPOSE 8080/tcp
 
+VOLUME /archiva/config
 VOLUME /archiva/repositories
 
 ENTRYPOINT ["/archiva/bin/archiva", "console"]
